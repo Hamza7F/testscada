@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "1D9tUMwMa2Q=",
+  "success": true,
+  "projectFilePath": "/vercel/share/v0-project/src/scada_demo_test.Application/scada_demo_test.Application.csproj",
+  "expectedPackageFiles": [
+    "/home/vercel-sandbox/.nuget/packages/firebasedatabase.net/5.0.0/firebasedatabase.net.5.0.0.nupkg.sha512",
+    "/home/vercel-sandbox/.nuget/packages/litedb/5.0.17/litedb.5.0.17.nupkg.sha512",
+    "/home/vercel-sandbox/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "/home/vercel-sandbox/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.0/microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "/home/vercel-sandbox/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/vercel-sandbox/.nuget/packages/system.reactive/6.0.0/system.reactive.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

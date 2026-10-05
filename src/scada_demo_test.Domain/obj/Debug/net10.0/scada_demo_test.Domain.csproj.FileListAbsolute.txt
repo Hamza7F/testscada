@@ -1,0 +1,13 @@
+/vercel/share/v0-project/src/scada_demo_test.Domain/bin/Debug/net10.0/scada_demo_test.Domain.deps.json
+/vercel/share/v0-project/src/scada_demo_test.Domain/bin/Debug/net10.0/scada_demo_test.Domain.dll
+/vercel/share/v0-project/src/scada_demo_test.Domain/bin/Debug/net10.0/scada_demo_test.Domain.pdb
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.csproj.AssemblyReference.cache
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.AssemblyInfoInputs.cache
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.AssemblyInfo.cs
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.csproj.CoreCompileInputs.cache
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.sourcelink.json
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.dll
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/refint/scada_demo_test.Domain.dll
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/scada_demo_test.Domain.pdb
+/vercel/share/v0-project/src/scada_demo_test.Domain/obj/Debug/net10.0/ref/scada_demo_test.Domain.dll

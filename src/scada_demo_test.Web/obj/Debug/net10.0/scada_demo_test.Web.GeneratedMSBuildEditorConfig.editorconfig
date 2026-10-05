@@ -1,0 +1,116 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = scada_demo_test.Web
+build_property.RootNamespace = scada_demo_test.Web
+build_property.ProjectDir = /vercel/share/v0-project/src/scada_demo_test.Web/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 10.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /vercel/share/v0-project/src/scada_demo_test.Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Alerts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWxlcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/AuditLogs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXVkaXRMb2dzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Charts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2hhcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Devices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV2aWNlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Energy.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW5lcmd5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Gateway.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR2F0ZXdheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/MultiSite.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTXVsdGlTaXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/PlantEnergy.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGxhbnRFbmVyZ3kucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Reports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Summary.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3VtbWFyeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Tanks.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGFua3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/Users.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/FlowMeterCard.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0Zsb3dNZXRlckNhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0xvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1JlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Shared/TopBar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1RvcEJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/vercel/share/v0-project/src/scada_demo_test.Web/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
