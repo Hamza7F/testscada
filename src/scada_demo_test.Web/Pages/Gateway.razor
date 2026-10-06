@@ -873,8 +873,7 @@ else
                     {
                         await RefreshChildrenAsync(gid);
                     }
-                    if (!_disposed) StateHasChanged();
-                });
+                    if (!_disposed) await InvokeAsync(StateHasChanged);
             }
             catch { /* circuit closed */ }
         }, null, 1000, 4000);

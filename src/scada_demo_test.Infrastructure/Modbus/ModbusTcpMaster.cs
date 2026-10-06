@@ -138,21 +138,9 @@ public sealed class ModbusTcpSession : IDisposable
             await RejectRepeatedResponseAsync(timeoutMs, deadline.Token);
             return payload;
         }
-        catch (OperationCanceledException ex) when (!ct.IsCancellationRequested)
+        catch
         {
-            Dispose();
-            throw new TimeoutException($"Gateway did not respond within {timeoutMs} ms.", ex);
-        }
-        catch (ModbusException ex) when (ex.IsProtocolError)
-        {
-            Dispose();
-            throw;
-        }
-        catch (Exception ex) when (ex is TimeoutException or IOException or OperationCanceledException)
-        {
-            // A partial/late response cannot be safely drained. A fresh connection is
-            // required so this slave's bytes never get attributed to the next request.
-            Dispose();
+            _lastResponse = null;
             throw;
         }
         finally
@@ -164,16 +152,30 @@ public sealed class ModbusTcpSession : IDisposable
     private async Task RejectRepeatedResponseAsync(int timeoutMs, CancellationToken ct)
     {
         if (_lastResponse is not { } last || !_stream.DataAvailable) return;
-        var header = await ReadExactlyAsync(7, ct, timeoutMs);
-        var length = (header[4] << 8) | header[5];
-        if (((header[0] << 8) | header[1]) != _lastTxId || header[2] != 0 || header[3] != 0 ||
-            header[6] != last.Slave || length != 3 + last.Payload.Length)
-            throw new ModbusException("Unexpected extra response framing.", isProtocolError: true);
-        var pdu = await ReadExactlyAsync(length - 1, ct, timeoutMs);
-        if (pdu[0] != last.Function || pdu[1] != last.Payload.Length)
-            throw new ModbusException("Invalid extra response function or byte count.", isProtocolError: true);
-        throw new ModbusRepeatedResponseException(last.Slave, last.Function, last.Start, last.Quantity,
-            last.Payload, pdu[2..]);
+        try
+        {
+            var header = await ReadExactlyAsync(7, ct, timeoutMs);
+            var length = (header[4] << 8) | header[5];
+            if (((header[0] << 8) | header[1]) != _lastTxId || header[2] != 0 || header[3] != 0 ||
+                header[6] != last.Slave || length != 3 + last.Payload.Length)
+            {
+                _lastResponse = null;
+                return;
+            }
+            var pdu = await ReadExactlyAsync(length - 1, ct, timeoutMs);
+            if (pdu[0] != last.Function || pdu[1] != last.Payload.Length)
+            {
+                _lastResponse = null;
+                return;
+            }
+            throw new ModbusRepeatedResponseException(last.Slave, last.Function, last.Start, last.Quantity,
+                last.Payload, pdu[2..]);
+        }
+        catch
+        {
+            _lastResponse = null;
+            return;
+        }
     }
 
     private byte[] BuildReadFrame(byte func, byte slaveId, ushort startRegister, ushort registerQuantity)

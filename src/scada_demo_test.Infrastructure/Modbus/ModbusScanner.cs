@@ -56,7 +56,7 @@ public sealed class ModbusScanner : ISmartScanService
     // A driver about to be thrown away by the degeneracy guard gets its proof
     // block re-read this many times before rejection - a transport hiccup must
     // not lose a genuine match.
-    private const int DegeneracyProofAttempts = 8;
+    private const int DegeneracyProofAttempts = 10;
     private const int InterWindowDelayMs = 60;
     private const int MaxProbeTimeoutMs = 1000;
 
@@ -213,7 +213,22 @@ public sealed class ModbusScanner : ISmartScanService
 
             // Do not pick a ranked winner when more than one complete profile matches.
             // Overlapping profiles are unsafe, but not proof of multiple physical meters.
-            if (validCandidates.Count > 1) ambiguousSlaves.Add(slave);
+            if (validCandidates.Count > 1)
+            {
+                ambiguousSlaves.Add(slave);
+                var candidatesList = validCandidates
+                    .Select(c => new ScannedCandidateDto(
+                        c.Dto.DriverKey,
+                        c.Dto.DisplayName,
+                        c.Dto.StartRegister,
+                        c.Dto.RegisterQuantity,
+                        c.Dto.UnitPrimary,
+                        c.Dto.UnitSecondary,
+                        c.Dto.ProofServed,
+                        c.Dto.LivePrimary.HasValue || c.Dto.LiveSecondary.HasValue))
+                    .ToList();
+                ambiguityMap[(byte)slave] = (true, candidatesList);
+            }
 
             if (validCandidates.Count == 1)
             {
@@ -485,10 +500,6 @@ public sealed class ModbusScanner : ISmartScanService
             result.Candidates.Add(new CandidateEntry(rank, dto, combinedBytes.ToArray(), evidence.ToArray()));
 
             bool strong = proofHasData;
-            if (driver.DriverKey == "AOSONG_AQ3485")
-            {
-                strong = false;
-            }
             _logger?.LogDebug(
                 "scan slave {Slave}: {Driver} width={Width} unproven={Unproven} live={Live} extra={Extra} proof={Proof} proofData={ProofData} strong={Strong}",
                 slave, driver.DriverKey, rank.Width, rank.Unproven, rank.Live, rank.Extra, proofServed, proofHasData, strong);
@@ -729,8 +740,8 @@ public sealed class ModbusScanner : ISmartScanService
         {
             // 1. Proven (0) comes before Unproven (1)
             var c = Unproven.CompareTo(other.Unproven); if (c != 0) return c;
-            // 2. Wider register verification is more specific (descending: 12 beats 2)
-            c = other.Width.CompareTo(Width); if (c != 0) return c;
+            // 2. Narrower register verification is more specific (ascending: 2 beats 12)
+            c = Width.CompareTo(other.Width); if (c != 0) return c;
             // 3. More live values confirmed (descending)
             c = other.Live.CompareTo(Live); if (c != 0) return c;
             // 4. More extra windows verified (descending)

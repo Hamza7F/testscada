@@ -510,7 +510,7 @@ else
                         }
                         catch { }
                     }
-                    if (!_disposed) StateHasChanged();
+                    if (!_disposed) await InvokeAsync(StateHasChanged);
                 });
             }
             catch { /* circuit closed */ }
@@ -672,12 +672,12 @@ else
         var seq = ++_toastSeq;
         ToastMessage = msg;
         ToastIsError = err;
-        StateHasChanged();
+        await InvokeAsync(StateHasChanged);
         await Task.Delay(1700);
         if (_toastSeq == seq && ToastMessage == msg)
         {
             ToastMessage = null;
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
         }
     }
 

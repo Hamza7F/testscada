@@ -84,7 +84,7 @@
         {
             try
             {
-                if (!_disposed) StateHasChanged();
+                if (!_disposed) await InvokeAsync(StateHasChanged);
             }
             catch { }
         });

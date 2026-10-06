@@ -391,7 +391,7 @@ else
                 {
                     SyncLiveValues();
                     Clock = DateTime.Now.ToString("HH:mm:ss");
-                    StateHasChanged();
+                    await InvokeAsync(StateHasChanged);
                 }
             }
             catch { }
